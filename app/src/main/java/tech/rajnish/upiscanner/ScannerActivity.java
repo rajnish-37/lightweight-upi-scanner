@@ -1,5 +1,5 @@
 package tech.rajnish.upiscanner;
-import android.app.Activity;
+import androidx.activity.ComponentActivity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 import androidx.activity.result.ActivityResultLauncher;
-public class ScannerActivity extends Activity {
+public class ScannerActivity extends ComponentActivity {
  private boolean started = false;
  private final ActivityResultLauncher<ScanOptions> scanner = registerForActivityResult(new ScanContract(), result -> {
   if (result.getContents() == null) { finish(); return; }
