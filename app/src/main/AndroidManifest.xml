@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<uses-permission android:name="android.permission.CAMERA"/>
+<uses-feature android:name="android.hardware.camera" android:required="false"/>
+<queries><intent><action android:name="android.intent.action.VIEW"/><data android:scheme="upi"/></intent></queries>
+<application android:label="UPI QR Scanner" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false">
+<activity android:name=".ScannerActivity" android:exported="true" android:screenOrientation="portrait">
+<intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+</activity>
+<service android:name=".ScannerTileService" android:label="Scan QR Code" android:icon="@drawable/ic_scan" android:exported="true" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+<intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+</service>
+</application></manifest>
